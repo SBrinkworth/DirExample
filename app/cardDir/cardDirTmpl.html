@@ -1,0 +1,18 @@
+<div class="card">
+  <h3>{{card.type}} {{card.suit}}</h3>
+
+  <div class="cardBody" ng-show="card.type !== 'Q' || card.type !== 'K'">
+    <div ng-repeat="suit in suitArr track by $index">
+      {{suit}}
+    </div>
+  </div>
+  <div class="cardBodyKing" ng-show="card.type === 'K'">
+    <img style="height: 100px; width: 100px;" src="https://thumbs.dreamstime.com/z/king-club-playing-card-closeup-41874191.jpg" />
+  </div>
+  <div class="cardBodyQueen" ng-show="card.type === 'Q'">
+    <img style="height: 100px; width: 100px;" src="http://www.vintageplayingcards.co.uk/image/cache/data/Cards/vpcweb%2017954-500x500.jpg" />
+  </div>
+
+  <h3>{{card.type}} {{card.suit}}</h3>
+  <button type="button" ng-click="playCard({blah: cardName})"></button>
+</div>
