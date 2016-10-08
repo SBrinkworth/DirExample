@@ -1,18 +1,20 @@
 <div class="card">
-  <h3>{{card.type}} {{card.suit}}</h3>
-
-  <div class="cardBody" ng-show="card.type !== 'Q' || card.type !== 'K'">
-    <div ng-repeat="suit in suitArr track by $index">
+  <div ng-hide="cardAtr.played === true">
+    {{cardAtr.type}} {{cardAtr.suit}}<br>
+    <div ng-repeat="suit in middleSection track by $index">
       {{suit}}
     </div>
+    <div ng-if="cardAtr.type === 'K'">
+      <img style="height: 100px; width: 50px" src="http://static.tumblr.com/pciegfl/sQmltl5gb/king.png" />
+    </div>
+    <div ng-if="cardAtr.type === 'Q'">
+      <img style="height: 100px; width: 50px" src="https://a.fsdn.com/con/app/proj/vector-cards/screenshots/QS.png" />
+    </div>
+    <br>{{cardAtr.type}} {{cardAtr.suit}}
+    <button type="button" name="button" ng-click="playCardFunc({card: cardAtr})">Play ME</button>
   </div>
-  <div class="cardBodyKing" ng-show="card.type === 'K'">
-    <img style="height: 100px; width: 100px;" src="https://thumbs.dreamstime.com/z/king-club-playing-card-closeup-41874191.jpg" />
+  <div ng-show="cardAtr.played === true">
+    <img style="height: 100px; width: 50px" src="https://s-media-cache-ak0.pinimg.com/originals/6c/a0/16/6ca016115a894f69dea75cc80f95ad92.jpg" alt="" />
   </div>
-  <div class="cardBodyQueen" ng-show="card.type === 'Q'">
-    <img style="height: 100px; width: 100px;" src="http://www.vintageplayingcards.co.uk/image/cache/data/Cards/vpcweb%2017954-500x500.jpg" />
-  </div>
-
-  <h3>{{card.type}} {{card.suit}}</h3>
-  <button type="button" ng-click="playCard({blah: cardName})"></button>
 </div>
+<hr>

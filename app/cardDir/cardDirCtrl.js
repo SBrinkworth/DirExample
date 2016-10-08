@@ -5,18 +5,15 @@ angular.module("app")
 
 		// VARIABLES
 		// ============================================================
-		$scope.suitArr = [];
-		$scope.cardName = $scope.card.type + " " + $scope.card.suit;
-
-		if ($scope.card.type !== 'K' || $scope.card.type !== 'Q') {
-			for (var i = 0; i < $scope.card.type; i++) {
-				$scope.suitArr.push($scope.card.suit);
-			}
-		}
-
+		$scope.middleSection = [];
 
 		// FUNCTIONS
 		// ============================================================
+		if (!$scope.cardAtr.type.match(/[KQJA]/ig)) {
+			for (var i = 0; i < $scope.cardAtr.type; i++) {
+				$scope.middleSection.push($scope.cardAtr.suit);
+			}
+		}
 
 
 	});

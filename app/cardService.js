@@ -7,16 +7,20 @@ angular.module("app")
 		// ============================================================
 		var cards = [{
 			suit: 'Hearts',
-			type: '5'
+			type: '5',
+			played: false
     }, {
 			suit: 'Diamonds',
-			type: 'K'
+			type: 'K',
+			played: false
     }, {
 			suit: 'Clubs',
-			type: '2'
+			type: '2',
+			played: false
     }, {
 			suit: 'Spades',
-			type: 'Q'
+			type: 'Q',
+			played: false
     }];
 
 		// OTHER FUNCTIONS

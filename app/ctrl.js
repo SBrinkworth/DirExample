@@ -9,8 +9,10 @@ angular.module("app")
 
 		// FUNCTIONS
 		// ============================================================
-		$scope.play = function(card) {
-			alert(card);
+		$scope.playCard = function(card) {
+			console.log(card);
+			card.played = true;
 		};
+
 
 	});
